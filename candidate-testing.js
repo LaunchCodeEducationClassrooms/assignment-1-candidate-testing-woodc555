@@ -32,6 +32,7 @@ function askQuestion() {
 let i = 0;
 while (i < questions.length){
   candidateAnswers.push(input.question(questions[i]));
+  console.log(`For question 1 you answered: ${candidateAnswers[i]}\n Correct Answer: ${correctAnswers[i]}`);
   i++;
 }
 }
@@ -39,32 +40,32 @@ while (i < questions.length){
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  console.log(`For question 1 you answered: ${candidateAnswers[0]}\n Correct Answer: ${correctAnswers[0]}\n\nFor question 2 you answered: ${candidateAnswers[1]}\n Correct Answer: ${correctAnswers[1]}\n\nFor question 3 you answered: ${candidateAnswers[2]}\n Correct Answer: ${correctAnswers[2]}\n\nFor question 4 you answered: ${candidateAnswers[3]}\n Correct Answer: ${correctAnswers[3]}\n\nFor question 5 you answered: ${candidateAnswers[4]}\n Correct Answer: ${correctAnswers[4]}\n\n`);
+  //console.log(`For question 1 you answered: ${candidateAnswers[0]}\n Correct Answer: ${correctAnswers[0]}\n\nFor question 2 you answered: ${candidateAnswers[1]}\n Correct Answer: ${correctAnswers[1]}\n\nFor question 3 you answered: ${candidateAnswers[2]}\n Correct Answer: ${correctAnswers[2]}\n\nFor question 4 you answered: ${candidateAnswers[3]}\n Correct Answer: ${correctAnswers[3]}\n\nFor question 5 you answered: ${candidateAnswers[4]}\n Correct Answer: ${correctAnswers[4]}\n\n`);
 
   candidateScore = 0;
-  maxScore = 100;
+  maxScore = 5;
 
   if (candidateAnswers[0].toLowerCase() === correctAnswers[0].toLowerCase()){
-    candidateScore += 20;
+    candidateScore += 1;
   }
   if (candidateAnswers[1].toLowerCase() === correctAnswers[1].toLowerCase()){
-    candidateScore += 20;
+    candidateScore += 1;
   }
   if (candidateAnswers[2].toLowerCase() === correctAnswers[2].toLowerCase()){
-    candidateScore += 20;
+    candidateScore += 1;
   }
   if (candidateAnswers[3].toLowerCase() === correctAnswers[3].toLowerCase()){
-    candidateScore += 20;
+    candidateScore += 1;
   }
   if (candidateAnswers[4].toLowerCase() === correctAnswers[4].toLowerCase()){
-    candidateScore += 20;
+    candidateScore += 1;
   }
   
-  console.log(`Final Score: ${candidateScore / maxScore * 100}%`);
-  if (candidateScore >= 80){
-    console.log("Congratulations! You Passed!");
+  console.log(`>>> Final Score: ${candidateScore / maxScore * 100}% (${candidateScore} / ${maxScore} were correct <<<`);
+  if (candidateScore / maxScore * 100 >= 80){
+    console.log(`>>> Congratulations! You Passed! <<<`);
   } else {
-    console.log("Sorry but you failed the test.")
+    console.log(">>> Sorry but you failed the test. <<<")
   }
 
   let grade;
