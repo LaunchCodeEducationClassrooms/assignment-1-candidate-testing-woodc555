@@ -61,15 +61,14 @@ function gradeQuiz(candidateAnswers) {
     candidateScore += 1;
   }
   
-  console.log(`>>> Final Score: ${candidateScore / maxScore * 100}% (${candidateScore} / ${maxScore} were correct <<<`);
-  if (candidateScore / maxScore * 100 >= 80){
+  let grade = candidateScore / maxScore * 100;
+
+  console.log(`>>> Final Score: ${grade}% (${candidateScore} / ${maxScore} were correct) <<<`);
+  if (grade >= 80){
     console.log(`>>> Congratulations! You Passed! <<<`);
   } else {
     console.log(">>> Sorry but you failed the test. <<<")
   }
-
-  let grade;
-  
 
   return grade;
 }
