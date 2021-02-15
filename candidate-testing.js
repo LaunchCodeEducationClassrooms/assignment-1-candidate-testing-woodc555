@@ -9,11 +9,11 @@ let candidateName = "";
 let question = "Who was the first American woman in space?"
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
-let questions = ["1) Who was the first American woman in space?",
-"2) True or False: 5000 meters = 5 kilometers",
-"3) (5 + 3)/2 * 10 = ?",
-"4) Given the array [8, 'Orbit', 'trajectory', 45], what entry is at index 2?",
-"5) What is the minimum crew size for the ISS?"];
+let questions = ["1) Who was the first American woman in space? ",
+"2) True or False: 5000 meters = 5 kilometers ",
+"3) (5 + 3)/2 * 10 = ? ",
+"4) Given the array [8, 'Orbit', 'trajectory', 45], what entry is at index 2? ",
+"5) What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride",
 "True",
 "40",
@@ -24,7 +24,7 @@ let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  name = input.question("Please enter your name:");
+  name = input.question("Please enter your name: ");
 }
 
 function askQuestion() {
@@ -32,7 +32,7 @@ function askQuestion() {
 let i = 0;
 while (i < questions.length){
   candidateAnswers.push(input.question(questions[i]));
-  console.log(`For question 1 you answered: ${candidateAnswers[i]}\n Correct Answer: ${correctAnswers[i]}\n`);
+  console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`);
   i++;
 }
 }
