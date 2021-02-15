@@ -32,7 +32,8 @@ function askQuestion() {
 let i = 0;
 while (i < questions.length){
   candidateAnswers.push(input.question(questions[i]));
-  console.log(`Your Answer: ${candidateAnswers[i]}\nCorrect Answer: ${correctAnswers[i]}\n`);
+  console.log(`Your Answer: ${candidateAnswers[i]}`);
+  console.log(`Correct Answer: ${correctAnswers[i]}`);
   i++;
 }
 }
@@ -43,20 +44,10 @@ function gradeQuiz(candidateAnswers) {
   candidateScore = 0;
   maxScore = 5;
 
-  if (candidateAnswers[0].toLowerCase() === correctAnswers[0].toLowerCase()){
-    candidateScore += 1;
-  }
-  if (candidateAnswers[1].toLowerCase() === correctAnswers[1].toLowerCase()){
-    candidateScore += 1;
-  }
-  if (candidateAnswers[2].toLowerCase() === correctAnswers[2].toLowerCase()){
-    candidateScore += 1;
-  }
-  if (candidateAnswers[3].toLowerCase() === correctAnswers[3].toLowerCase()){
-    candidateScore += 1;
-  }
-  if (candidateAnswers[4].toLowerCase() === correctAnswers[4].toLowerCase()){
-    candidateScore += 1;
+  for (let i = 0; i < correctAnswers.length; i ++){
+    if (candidateAnswers[i].toLowerCase === correctAnswers[i].toLowerCase){
+      candidateScore += 1;
+    }
   }
   
   let grade = candidateScore / maxScore * 100;
